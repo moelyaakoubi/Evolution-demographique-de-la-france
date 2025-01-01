@@ -118,3 +118,5 @@ connection.end(err => {
     }
     console.log('Connexion fermée avec succès.');
 });
+
+
