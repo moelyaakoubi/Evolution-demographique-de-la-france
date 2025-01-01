@@ -34,7 +34,7 @@ connection.query(sql, values, (err, result) => {
  console.log('Données insérées avec succès :', result);}) */
 
 // 4. lecture de données dans la table evolutions_populations
-connection.connect(err => {
+/* connection.connect(err => {
     if (err) {
         console.error('Erreur de connexion :', err);
     return;
@@ -47,7 +47,40 @@ connection.connect(err => {
     console.table(results);
     });
     connection.end();
-    });
+    }); */
+
+
+// 5. Mise à jour de données dans la table evolutions_populations
+/* const sql = 'UPDATE evolutions_populations SET population = ?, remarque = ? WHERE id_ville = ? AND annee = ?';
+const values = [1100, 'Croissance modérée', 1, 2024];
+
+connection.query(sql, values, (err, result) => {
+    if (err) {
+        console.error('Erreur lors de la mise à jour :', err);
+        return;
+    }
+    console.log('Données mises à jour avec succès :', result);
+}
+);
+
+connection.end(); */
+
+// 6. Suppression de données dans la table evolutions_populations
+const sql = 'DELETE FROM evolutions_populations WHERE id_ville = ? AND annee = ?';
+
+const values = [1, 2024];
+
+connection.query(sql, values, (err, result) => {
+    if (err) {
+        console.error('Erreur lors de la suppression :', err);
+        return;
+    }
+    console.log('Données supprimées avec succès :', result);
+});
+
+connection.end();
+
+
 
 
 
