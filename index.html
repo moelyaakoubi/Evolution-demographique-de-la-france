@@ -8,6 +8,13 @@
 </head>
 <body>
     <h1>Évolution de la Population</h1>
+
+    <div>
+        <label for="years">Nombre d'années pour la prédiction :</label>
+        <input type="number" id="years" name="years" min="1" value="5">
+        <button onclick="updateChart()">Afficher la population future</button>
+    </div>
+    
     <canvas id="populationChart" width="400" height="200"></canvas>
     <script src="app1.js"></script>
 </body>
